@@ -13,12 +13,15 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
+gem 'RedCloth'
+gem 'ckeditor'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'annotate'
 end
 
 group :development, :test do
@@ -34,5 +37,6 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'poltergeist'
-  gem 'shoulda-matchers', require: false  
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov'
 end
