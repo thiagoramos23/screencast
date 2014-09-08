@@ -40,3 +40,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'simplecov'
 end
+
+group :production do
+  gem 'pg'
+end
