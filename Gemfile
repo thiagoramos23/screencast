@@ -14,8 +14,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 gem 'simple_form'
-gem 'RedCloth'
 gem 'ckeditor'
+gem 'responders'
 
 group :development do
   gem 'better_errors'

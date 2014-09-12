@@ -29,4 +29,10 @@ FactoryGirl.define do
     email "test@example.com"
     password "please123"
   end
+
+  factory :admin, class: User do
+  	name "Admin"
+  	email "admin@example.com"
+  	password "siteadmin"
+  end
 end

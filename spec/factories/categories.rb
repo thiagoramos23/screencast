@@ -14,4 +14,8 @@ FactoryGirl.define do
   factory :category do
     name "MyString"
   end
+
+  factory :beginner, class: Category do
+  	name "Iniciante"
+  end
 end
