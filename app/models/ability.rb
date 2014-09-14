@@ -5,8 +5,10 @@ class Ability
     user ||= User.new
     if user.admin?
       can :manage, :all      
+    elsif user.paid_user?
+      can :read, Cast.all
     else
-      can :read, :all
+        can :read, Cast.where(type: Cast.free)
     end
 
     #
