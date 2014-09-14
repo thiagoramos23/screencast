@@ -16,6 +16,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
+#  role_id                :integer
 #
 # Indexes
 #
@@ -28,11 +29,13 @@ FactoryGirl.define do
     name "Test User"
     email "test@example.com"
     password "please123"
+    role { FactoryGirl.build(:role) }
   end
 
   factory :admin, class: User do
   	name "Admin"
   	email "admin@example.com"
   	password "siteadmin"
+    role { FactoryGirl.build(:role_admin) }
   end
 end

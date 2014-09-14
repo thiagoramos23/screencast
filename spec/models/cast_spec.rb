@@ -46,8 +46,8 @@ RSpec.describe Cast, :type => :model do
 	context "Invalid Cast" do
 		let(:invalid_cast) { FactoryGirl.build(:invalid_cast) }
 
-		it "not saves the cast" do
-			expect(invalid_cast.save).to_not be_persisted
+		it "has to be invalid" do
+			expect(invalid_cast).to be_invalid
 		end
 	end
 end

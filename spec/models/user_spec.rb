@@ -16,6 +16,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
+#  role_id                :integer
 #
 # Indexes
 #
@@ -30,9 +31,17 @@ describe User do
   subject { @user }
 
   it { should respond_to(:email) }
+  it { should respond_to(:role) }
 
   it "#email returns a string" do
     expect(@user.email).to match 'user@example.com'
   end
 
+  context "User as Admin" do
+  	let(:user_admin) { FactoryGirl.create(:admin) }
+
+	  it "returns true if user is admin" do
+	  	expect(user_admin.admin?).to be_truthy
+	  end  	
+  end
 end
