@@ -42,4 +42,12 @@ RSpec.describe Cast, :type => :model do
 	context "enum" do
 		it { expect(subject).to define_enum_for(:type) }
 	end
+
+	context "Invalid Cast" do
+		let(:invalid_cast) { FactoryGirl.build(:invalid_cast) }
+
+		it "not saves the cast" do
+			expect(invalid_cast.save).to_not be_persisted
+		end
+	end
 end

@@ -21,9 +21,19 @@ FactoryGirl.define do
     title "Initiating with Table View"
     content "It's very easy to start developing with table views"
     video_url "http://video.com/url_do_video"
-    user { FactoryGirl.create(:admin) }
+    user { FactoryGirl.build(:admin) }
     category { FactoryGirl.create(:beginner) }
     type 1
     code_url "http://github.com/thiagoramos23/code_url"
+  end
+
+  factory :invalid_cast, class: Cast do
+  	title ""
+  	content ""
+  	video_url ""
+    user { FactoryGirl.build(:admin) }
+    category { FactoryGirl.create(:beginner) }
+    type 1
+    code_url ""
   end
 end
